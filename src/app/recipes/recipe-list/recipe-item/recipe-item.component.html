@@ -1,0 +1,34 @@
+<!-- <div class="text-center"><h2>Recipe list</h2></div><hr>
+<div class="container">
+  <div *ngFor="let r of rs;let i = index">
+    <div class="row">
+    
+      <div class="col-md-2">
+        <font style="font-weight: bold">Dish Name:</font> <a href="#">{{rs[i].name}}</a> <br>
+        <font style="font-weight: bold">Description:</font> {{rs[i].desc}}
+      </div>
+      <div class="col-md-5">
+          <img src="{{rs[i].imagepath}}" alt="" style="width: 200px; height: 150px">
+      </div>
+    </div>
+    <hr>
+  </div> 
+  
+</div> -->
+<div class="text-center">
+  <h2>Recipe list</h2>
+</div>
+<hr>
+
+<a style="cursor: pointer;" class="list-group-item list-group-item-action" *ngFor="let r of rs;" (click)="onSelect(r)">
+
+  <div class="media">
+    <div class="media-left media-middle">
+      <img src="{{r.imagepath}}" class="media-object" style="width:60px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{r.name}}</h4>
+      <p>{{r.desc}}</p>
+    </div>
+  </div>
+</a>

@@ -1,0 +1,33 @@
+<div class="row text-center"><h3>Shoping list</h3></div>
+<div class="row">
+ 
+    <form>
+        
+        <div class="form-group">
+          <label >Name</label>
+          <input type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Name">
+        </div>
+   
+        <div class="form-group">
+          <label >Amount</label>
+          <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Amount">
+        </div>
+        
+        <button type="submit" class="btn btn-success">Add</button>
+        &nbsp;&nbsp;
+        <button type="submit" class="btn btn-danger">Delete</button>
+        &nbsp;&nbsp;
+        <button type="submit" class="btn btn-primary">Clear</button>
+      </form>
+</div>
+
+<div class="row">
+  <h4>Ingrediants:</h4>
+  <ul class="list-group" *ngFor="let i of ing">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      {{i.name}}
+      <span class="badge badge-primary badge-pill">{{i.quantity}}</span>
+    </li>
+  </ul>
+</div>
+
