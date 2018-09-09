@@ -20,6 +20,7 @@ export class IngredientService {
 
   getIngredients(): Ingredients[] {
     return this.ingredients.slice();
+    
   }
 
   constructor() { }
