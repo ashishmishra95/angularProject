@@ -12,6 +12,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { IngredientService } from './ingredients/ingredient.service';
 import { AppRoutingModule } from './app.routing.module';
+import { FormsModule } from '../../node_modules/@angular/Forms';
 
 
 
@@ -28,7 +29,9 @@ import { AppRoutingModule } from './app.routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
+
   
   ],
   providers: [IngredientService],
