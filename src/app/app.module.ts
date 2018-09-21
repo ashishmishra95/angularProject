@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from "@angular/common/http";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireDatabase } from '@angular/fire/database';
 
 
 import { AppComponent } from './app.component';
@@ -13,6 +16,7 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { IngredientService } from './ingredients/ingredient.service';
 import { AppRoutingModule } from './app.routing.module';
 import { FormsModule } from '../../node_modules/@angular/Forms';
+import { firebaseConfig } from '../environments/environment';
 
 
 
@@ -30,11 +34,11 @@ import { FormsModule } from '../../node_modules/@angular/Forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
-
-  
+    FormsModule,
+    HttpClientModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [IngredientService],
+  providers: [IngredientService, AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
