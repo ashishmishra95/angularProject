@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   sendData() {
-    this.fb.putData(this.recipe);
+    this.fb.putHttpData(this.recipe);
   }
 
 }

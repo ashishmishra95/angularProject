@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../../recipe.model';
 import { RecipeService } from '../../recipe.service';
 import { Ingredients } from '../../../ingredients/ingredient.model';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-recipe-item',
@@ -10,7 +11,8 @@ import { Ingredients } from '../../../ingredients/ingredient.model';
 })
 export class RecipeItemComponent implements OnInit {
 
-  rs: Recipe[] = [
+  url = 'https://fir-72a37.firebaseio.com/recipe.json';
+  rs: Recipe[]  = [
 
     new Recipe(
       'PIZZA',
@@ -40,9 +42,14 @@ export class RecipeItemComponent implements OnInit {
     )
   ];
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService, private http: HttpClient) { }
 
   ngOnInit() {
+    // // this.http.get(this.url).subscribe((recipeList: Recipe[]) => {
+    // //   // this.rs = recipeList;
+    // //   console.log(recipeList);
+      
+    // });
   }
 
   onSelect(recipe: Recipe) {

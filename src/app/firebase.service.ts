@@ -10,19 +10,21 @@ import { AngularFireList } from '@angular/fire/database';
 })
 export class FirebaseService implements OnInit {
   recipe: AngularFireList<Recipe[]> = this.angularFire.list('recipe');
-  constructor(private angularFire: AngularFireDatabase) { }
+  constructor(private angularFire: AngularFireDatabase, private http: HttpClient) { }
 
   ngOnInit() {
   }
 
-  putData(rec: Recipe) {
-    console.log(this.angularFire.database);
-    this.recipe.push([rec]);
-  }
-
-  // putHttpData(rec: Recipe) {
-  //   this.http.post('https://fir-7e655.firebaseio.com/recipe', rec).subscribe(res => {
-  //     console.log(res);
-  //   });
+  // putData(rec: Recipe) {
+  //   console.log(this.angularFire.database);
+  //   this.recipe.push([rec]);
   // }
+
+  putHttpData(rec: Recipe) {
+    this.http.post('https://fir-72a37.firebaseio.com/recipe.json', rec)
+      .subscribe(res => {
+      console.log(res);
+      }
+    );
+  }
 }
